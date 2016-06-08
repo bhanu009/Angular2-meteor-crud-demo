@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-4">
+        <h2>Edit song</h2>
+        <form class="form-horizontal" role="form" [ngFormModel]="editSongForm" #f="ngForm" (submit)="EditSong(f.value)">
+            <div class="form-group">
+                <label for="name">Song</label>
+                <input type="text" class="form-control"  name="name" ngControl="name">
+            </div>
+            <div class="form-group">
+                <label for="singer">Singer name</label>
+                <input type="text" class="form-control"  name="singer" ngControl="singer">
+            </div>
+            <div class="form-group">
+                <label for="album">Album</label>
+                <input type="text" class="form-control" name="album" ngControl="album">
+            </div>
+            <button type="submit" class="btn btn-default">Edit</button>
+        </form>
+    </div>
+</div>
+
