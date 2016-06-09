@@ -8,7 +8,7 @@
             <th>Album</th>
             <th>Action</th>
         </tr>
-        <tr *ngFor="let song of songs">
+        <tr *ngFor="let song of songs | paginate: { itemsPerPage: 1, currentPage: p }">
             <td>{{song.name}}</td>
             <td>{{song.singer}}</td>
             <td>{{song.album}}</td>
@@ -16,6 +16,10 @@
                 <a class="btn btn-primary btn-sm" href="/edit-song/{{song._id}}">Edit</a>
                 <a class="btn btn-danger btn-sm" (click)="deleteSong(song)">Delete</a>
             </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="text-center"><pagination-controls (pageChange)="p = $event"></pagination-controls></td>
         </tr>
     </table>
 </div>
